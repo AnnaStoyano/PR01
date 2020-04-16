@@ -32,11 +32,19 @@
 
     .banner-box{
         margin-top:-100px;
+        max-width: 510px;
         width: 40%;
     }
     
 .banner-text{
     width: 90%;
+}
+/*About*/
+.wrapper.about{
+    padding: 4% 0;
+}
+.about-text{
+    width: 50%;
 }
 }
 
@@ -93,6 +101,12 @@
     opacity: 0.8;
     padding: 0.5rem;
 }
+.wrapper.about{
+    padding: 5% 0;
+}
+.about-text{
+    width: 90%;
+}
 }
 
 
@@ -106,7 +120,7 @@
 html, body{
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
     }
 
 a {
@@ -270,4 +284,17 @@ h1{
 .btn:hover{
     background-color: rgb(244, 253, 255);
     color:  #10c9c3;
+}
+
+/*ABOUT*/
+
+.wrapper.about{
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-text{
+    text-align: center;
+    max-width: 700px;
+    min-width: 200px;
 }
