@@ -25,27 +25,48 @@
     }
 
     /*BANNER*/
-    .wrapper.banner{
+    .wrapper.banner {
         justify-content: flex-end;
         height: 88vh;
     }
 
-    .banner-box{
-        margin-top:-100px;
+    .banner-box {
+        margin-top: -100px;
         max-width: 510px;
         width: 40%;
     }
-    
-.banner-text{
-    width: 90%;
-}
-/*About*/
-.wrapper.about{
-    padding: 4% 0;
-}
-.about-text{
-    width: 50%;
-}
+
+    .banner-text {
+        width: 90%;
+    }
+
+    /*About*/
+    .wrapper.about {
+        padding: 4% 0;
+    }
+
+    .about-text {
+        width: 60%;
+    }
+
+    /*PROGRESS*/
+    .wrapper.progress {
+        justify-content: space-between;
+        height: 100vh;
+    }
+
+    .progress-box {
+        width: 50%;
+        padding: 0 6%;
+    }
+
+    .progress-lines {
+        margin-top: 2.5rem;
+    }
+
+    .progress-img {
+        width: 50%;
+    }
 }
 
 @media screen and (max-width:1099px) {
@@ -84,29 +105,57 @@
     }
 
     /*BANNER*/
-    .wrapper.banner{
+    .wrapper.banner {
         justify-content: center;
         height: 60vh;
     }
 
-    .banner-box{
+    .banner-box {
         width: 100%;
         text-align: center;
         max-width: 590px;
     }
-    
-.banner-text{
-    width: 100%;
-    background-color: rgb(244, 253, 255);
-    opacity: 0.8;
-    padding: 0.5rem;
-}
-.wrapper.about{
-    padding: 5% 0;
-}
-.about-text{
-    width: 90%;
-}
+
+    .banner-text {
+        width: 100%;
+        background-color: rgb(244, 253, 255);
+        opacity: 0.8;
+        padding: 0.5rem;
+    }
+
+    /*About*/
+    .wrapper.about {
+        padding: 7% 0;
+    }
+
+    .about-text {
+        width: 85%;
+    }
+
+    /*PROGRESS*/
+    .wrapper.progress {
+        height: 70vh;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .progress-box {
+        position: absolute;
+        width: 50%;
+        min-width: 260px;
+        background-color: rgb(244, 253, 255);
+        opacity: 0.9;
+        padding: 5% 3%;
+        align-self: center;
+    }
+
+    .progress-lines {
+        margin-top: 2.5rem;
+    }
+
+    .progress-img {
+        width: 100%;
+    }
 }
 
 
@@ -117,18 +166,19 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-html, body{
+html,
+body {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
-    }
+}
 
 a {
     text-decoration: none;
     color: black;
 }
 
-header{
+header {
     background-color: #dce6e8;
     background-size: cover;
     background-repeat: no-repeat;
@@ -249,23 +299,23 @@ header{
 
 /*-----------------------------*/
 /* Banner */
-.wrapper{
+.wrapper {
     width: 100%;
     display: flex;
 }
 
-.wrapper.banner{
+.wrapper.banner {
     align-items: center;
-    padding:4%;
+    padding: 4%;
 }
 
 
-.text-nanito{
+.text-nanito {
     margin: 1.6rem 0;
     line-height: 1.5;
 }
 
-.btn{
+.btn {
     padding: 1rem;
     background-color: #10c9c3;
     text-transform: uppercase;
@@ -277,24 +327,79 @@ header{
     transition: background-color 0.5s linear, color 0.5s linear;
 }
 
-h1{
+h1 {
     font-size: 2rem;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: rgb(244, 253, 255);
-    color:  #10c9c3;
+    color: #10c9c3;
 }
 
 /*ABOUT*/
 
-.wrapper.about{
+.wrapper.about {
     flex-direction: column;
     align-items: center;
 }
 
-.about-text{
+.about-text {
     text-align: center;
     max-width: 700px;
     min-width: 200px;
+}
+
+/*Progress*/
+.wrapper.progress {
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.progress-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.progress-lines {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.progress-lines span {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+span .value {
+    margin-left: 20px;
+}
+
+progress {
+    margin-top: 15px;
+    width: 100%;
+    height: 6px;
+    border-radius: 20px;
+}
+
+progress:not(.last-progress) {
+    margin-bottom: 40px;
+}
+
+progress::-webkit-progress-bar {
+    border-radius: 20px;
+    background-color: #d8d8d8;
+}
+
+progress::-webkit-progress-value {
+    background-color: #10c9c3;
+    border-radius: 20px;
+}
+
+.progress-img {
+    background-image: url("img/progress.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
