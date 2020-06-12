@@ -1,0 +1,179 @@
+@mixin menu-icon {
+    z-index: 99;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    .menu-line {
+        position: relative;
+        width: 100%;
+        height: 5px;
+        background-color: rgb(37, 37, 37);
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 5px;
+            top: -10px;
+            left: 0;
+            background-color: rgb(37, 37, 37);
+            transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 5px;
+            top: 10px;
+            left: 0;
+            background-color: rgb(37, 37, 37);
+            transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+        }
+    }
+}
+
+@mixin mobile-nav {
+    .nav-desktop {
+        display: none;
+    }
+
+    .menu-icon {
+        @include menu-icon;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .mobile-nav {
+        background-color: $blue;
+        position: absolute;
+        right: 0;
+        padding-top: 0.4rem;
+        height: 100vh;
+        top: 0;
+        width: 200px;
+        z-index: 20;
+        opacity: 100%;
+        margin-right: -300px;
+        transition: margin-right 1s linear;
+    }
+
+    .mobile-nav-active {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        margin-right: 0px;
+        transition: margin-right 1s linear;
+    }
+
+    .nav-list.mobile {
+        flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 40%;
+    margin-top: 4.5rem;
+    }
+
+    .nav-item {
+        padding: 0.5rem 1.2rem;
+        width: 100%;
+
+        a {
+            display: inline-block;
+            width: 100%;
+        }
+
+        &:hover {
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            margin: -1px 0;
+        }
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .menu-icon.menu-line-active .menu-line {
+        background-color: transparent;
+
+        &:before {
+            transform: rotate(45deg);
+            top: 0;
+            transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+            top: 0;
+            transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+
+        }
+    }
+}
+
+@mixin mobile-banner{
+    justify-content: center;
+    height: 60vh;
+
+    .banner{
+        &-box {
+            width: 100%;
+            text-align: center;
+            max-width: 590px;
+        }
+    
+        &-text {
+            width: 100%;
+            background-color: rgb(244, 253, 255);
+            opacity: 0.8;
+            padding: 0.5rem;
+        }
+    }
+}
+
+@mixin mobile-about{
+    padding: 7% 0;
+    
+    .about-text {
+        width: 85%;
+    }
+}
+
+@mixin  mobile-progress {
+    height: 70vh;
+    justify-content: center;
+    text-align: center;
+
+    .progress{
+        &-box {
+            position: absolute;
+            width: 50%;
+            min-width: 260px;
+            background-color: rgb(244, 253, 255);
+            opacity: 0.9;
+            padding: 5% 3%;
+            align-self: center;
+        }
+
+        &-lines {
+            margin-top: 2.5rem;
+        }
+    
+        &-img {
+            width: 100%;
+        }
+    }
+}
+
+@mixin width1($w){
+    $div: $w;
+    @debug 're #{$w}';
+}

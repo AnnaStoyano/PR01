@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito+Sans&display=swap');
+@import 'media';
+@import 'logic';
+@import 'config';
+@import 'basic';
+
+%flex100{
+    display: flex;
+    width: 100%;
+}
+
+@mixin pasteImg($url){
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url($url);
+}
+
+header {
+    background-color: #dce6e8;
+    @include pasteImg("../img/header-back.jpg");
+}
+
+.wrapper {
+    @extend %flex100;
+}
+
+/*Navigation*/
+.nav-wrapper {
+    padding: 1.5rem 4rem;
+    @extend %flex100;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.nav-list {
+    @extend %flex100;
+    list-style-type: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/*Banner*/
+.wrapper.banner {
+    align-items: center;
+    padding: 4%;
+}
+
+.text-nanito {
+    margin: 1.6rem 0;
+    line-height: 1.5;
+}
+
+/*About*/
+.wrapper.about {
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-text {
+    text-align: center;
+    max-width: 700px;
+    min-width: 200px;
+}
+
+/*Progress*/
+
+.wrapper.progress {
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.progress{
+    &-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    }
+
+    &-lines {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        span {
+            font-weight: 600;
+            text-transform: uppercase;
+            .value {
+                margin-left: 20px;
+            }
+        }
+    }
+
+    &-img {
+        @include pasteImg("../img/progress.jpg");
+    }
+}
+
+/*NUMBERS*/
+.wrapper.numbers {
+    padding: 2rem;
+    color: $white;
+    display: grid;
+    background-color: $blue;
+}
+
+.number-wrapper {
+    display: flex;
+    align-items: center;
+    
+    @include width1(100px);
+}
+
+.numbers{
+    i {
+        font-size: 2.5rem;
+    }
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        justify-content: space-between;
+        .title {
+            margin-top: 7px;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+    }
+
+}

@@ -66,10 +66,43 @@
 
     .progress-img {
         width: 50%;
+        height: 100%;
+    }
+
+    /*NUMBERS*/
+    .wrapper.numbers {
+        padding: 3rem 1rem;
+        justify-content: space-around;
+    }
+
+    .number-wrapper {
+        justify-content: center;
+    }
+
+    .numbers .row {
+        justify-content: space-around;
+        width: 50%;
+        flex-wrap: wrap;
+    }
+
+    /*GOODS*/
+    .goods .row {
+        justify-content: space-around;
+        width: 100%;
     }
 }
 
-@media screen and (max-width:1099px) {
+@media screen and (max-width:1099px) and (min-width: 500px){
+    .subrow{
+        justify-content: space-around;
+        width: 77.5%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        padding: 1.6rem;
+    }
+}
+
+@media screen and (max-width:499px) {
     .desktop-nav {
         display: none;
     }
@@ -156,6 +189,44 @@
     .progress-img {
         width: 100%;
     }
+
+    /*NUMBERS*/
+    .wrapper.numbers {
+        padding: 3rem;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .star {
+        margin-left: -4px;
+    }
+
+    .number-wrapper {
+        margin: 10px auto;
+        justify-content: flex-start;
+    }
+
+    .numbers .row {
+        width: 100%;
+    }
+
+    /*GOODS*/
+
+    .goods .row {
+        justify-content: space-between;
+    }
+
+    .subrow{
+        justify-content: space-around;
+        width: 77.5%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+
+    .product {
+        min-width: 300px;
+        min-height: 300px;
+    }
 }
 
 
@@ -241,7 +312,7 @@ header {
 
 /* MENU BUTTON */
 
-.menu-icon {
+/*.menu-icon {
     z-index: 99;
     width: 30px;
     height: 30px;
@@ -296,7 +367,7 @@ header {
     top: 0;
     transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
 }
-
+*/
 /*-----------------------------*/
 /* Banner */
 .wrapper {
@@ -402,4 +473,74 @@ progress::-webkit-progress-value {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+/*NUMBERS*/
+
+.wrapper.numbers {
+    color: white;
+    background-color: #10c9c3;
+    justify-content: space-around;
+}
+
+.row {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.number-wrapper {
+    display: flex;
+    min-width: 210px;
+    max-width: 210px;
+    align-items: center;
+}
+
+.numbers i {
+    font-size: 2.5rem;
+}
+
+.numbers-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    justify-content: space-between;
+}
+
+.numbers-text .title {
+    margin-top: 7px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+/*GOODS*/
+.wrapper.goods {
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 25vw;
+    height: 24.6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product i {
+    display: none;
+}
+
+.subrow{
+    display: flex;
+}
+
+.product:hover i {
+    display: block;
+}
+
+.product:nth-child(1n) {
+    background-color: red;
+}
+
+.product:nth-child(2n) {
+    background-color: yellow;
 }
