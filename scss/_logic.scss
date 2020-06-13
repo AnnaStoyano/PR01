@@ -172,8 +172,3 @@
         }
     }
 }
-
-@mixin width1($w){
-    $div: $w;
-    @debug 're #{$w}';
-}

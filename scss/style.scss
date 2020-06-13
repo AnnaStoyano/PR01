@@ -4,12 +4,12 @@
 @import 'config';
 @import 'basic';
 
-%flex100{
+%flex100 {
     display: flex;
     width: 100%;
 }
 
-@mixin pasteImg($url){
+@mixin pasteImg($url) {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -72,20 +72,22 @@ header {
     position: relative;
 }
 
-.progress{
-    &-box{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.progress {
+    &-box {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 
     &-lines {
         display: flex;
         flex-direction: column;
         width: 100%;
+
         span {
             font-weight: 600;
             text-transform: uppercase;
+
             .value {
                 margin-left: 20px;
             }
@@ -101,18 +103,20 @@ header {
 .wrapper.numbers {
     padding: 2rem;
     color: $white;
-    display: grid;
+    justify-content: center;
     background-color: $blue;
 }
 
 .number-wrapper {
     display: flex;
     align-items: center;
-    
-    @include width1(100px);
 }
 
-.numbers{
+.numbers {
+    &-row {
+        display: grid;
+    }
+
     i {
         font-size: 2.5rem;
     }
@@ -122,6 +126,7 @@ header {
         flex-direction: column;
         margin-left: 15px;
         justify-content: space-between;
+
         .title {
             margin-top: 7px;
             text-transform: uppercase;
@@ -129,4 +134,45 @@ header {
         }
     }
 
+    .heard {
+        width: 166.55px;
+    }
+
+    .star {
+        width: 200.3px;
+    }
+}
+
+.wrapper.goods{
+    display: grid;
+    background-color: $gray;
+}
+
+.product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i{
+        display: none;
+    }
+
+    &:nth-child(3n){
+        background-color: #f3fdfd;
+    }
+    &:nth-child(3n+1){
+        background-color: #c2d7e0;
+    }
+    
+    &:nth-child(3n+2){
+        background-color: $gray;
+    }
+
+    &:hover{
+        opacity: 0.5;
+        background-color: rgba($color: #000000, $alpha: .6);
+        i{
+            display: inline-block;
+            color: $white;
+        }
+    }
 }
